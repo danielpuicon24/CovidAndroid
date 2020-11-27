@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "935314228130",
+    "firebase_url": "https://covidapp2020-6c964.firebaseio.com",
+    "project_id": "covidapp2020-6c964",
+    "storage_bucket": "covidapp2020-6c964.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935314228130:android:b0df30c5de1927efade8fb",
+        "android_client_info": {
+          "package_name": "com.example.covidandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935314228130-402h81vlr3u8d9r27u1rtcbc1j8cna3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covidandroid",
+            "certificate_hash": "d8c820f6f02dbca2f2f478aff39f5168c21bbb3f"
+          }
+        },
+        {
+          "client_id": "935314228130-mplg3o7nd9nhma5kd7htv62469lmrm9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDywD_yE9wgr8EzdusQmPAevSwgO87hN34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935314228130-mplg3o7nd9nhma5kd7htv62469lmrm9i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "935314228130-ti2fh3c8c7gtra2o2c7icia2kcnvhhbl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.daniel2020.flutterApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935314228130:android:9a253d620c3962f6ade8fb",
+        "android_client_info": {
+          "package_name": "com.example.covidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935314228130-8tds96rdfbk2l0j5dihsd4cfosk04cd6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covidapp",
+            "certificate_hash": "d8c820f6f02dbca2f2f478aff39f5168c21bbb3f"
+          }
+        },
+        {
+          "client_id": "935314228130-mplg3o7nd9nhma5kd7htv62469lmrm9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDywD_yE9wgr8EzdusQmPAevSwgO87hN34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935314228130-mplg3o7nd9nhma5kd7htv62469lmrm9i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "935314228130-ti2fh3c8c7gtra2o2c7icia2kcnvhhbl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.daniel2020.flutterApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

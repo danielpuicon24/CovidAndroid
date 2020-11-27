@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentPerfil">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/colorCoronavirus">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Perfil del Usuario Logueado"
+                android:textColor="@color/cardview_dark_background" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            >
+
+            <TextView
+                android:id="@+id/txtNombreUsuarioEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Nombre del Usuario Logueado"
+                android:textColor="@color/cardview_dark_background" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="70dp"
+            >
+            <TextView
+                android:id="@+id/txtEmailUsuarioEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Email del Usuario Logueado"
+                android:textColor="@color/cardview_dark_background" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btnVerPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Perfil del Usuario"
+            android:drawableLeft="@drawable/btn_verperfil"
+            />
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/srcDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:stretchColumns="1">
+            <TableRow >
+                <TextView
+                    android:text="DATOS DEL PERFIL DEL USUARIO"
+                    android:padding="3dip"
+                    android:layout_span="2"
+                    android:layout_gravity="center"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="DNI"
+                    android:padding="4dip"
+                    android:layout_gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/edtDNI"
+                    android:text=""
+                    android:layout_width="20dp"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Codigo"
+                    android:padding="4dip"
+                    android:layout_gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/edtCodigo"
+                    android:text=""
+                    android:layout_width="20dp"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/btnBuscarDNI"
+                    android:text="Buscar DNI"
+                    android:padding="4dip"
+                    android:layout_span="2"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Ingresa tus credenciales para buscar tu DNI"
+                    android:padding="4dip"
+                    android:layout_span="2"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_gravity="center"
+                    android:padding="4dip"
+                    android:text="DNI Solicitado: " />
+
+                <TextView
+                    android:id="@+id/txtDNISolicitado"
+                    android:text="dni"
+                    android:padding="4dip"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_gravity="center"
+                    android:padding="4dip"
+                    android:text="Nombres Completos: " />
+
+                <TextView
+                    android:id="@+id/txtNombresCompletos"
+                    android:padding="4dip"
+                    android:text="nombres" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_gravity="center"
+                    android:padding="4dip"
+                    android:text="Apellidos Completos: " />
+
+                <TextView
+                    android:id="@+id/txtApellidosCompletos"
+                    android:padding="4dip"
+                    android:text="apellidos" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_gravity="center"
+                    android:padding="4dip"
+                    android:text="Fecha de Nacimiento: " />
+
+                <EditText
+                    android:id="@+id/edtFechaNacimiento"
+                    android:hint="Fecha de Nacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1" />
+            </TableRow>
+
+            <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Telefono:"
+                    android:padding="4dip"
+                    android:layout_gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/edtTelefono"
+                    android:text=""
+                    android:layout_width="10dp"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Codigo:"
+                    android:padding="4dip"
+                    android:layout_gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/edtCodigoIdentificador"
+                    android:text=""
+                    android:layout_width="10dp"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/btnGuardarDatosEditados"
+                    android:text="Guardar Datos"
+                    android:padding="4dip"
+                    android:layout_span="2"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+        </TableLayout>
+
+       <!-- <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="EDITAR DATOS DEL PERFIL DEL USUARIO"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="DNI:  "
+                    android:textColor="@color/cardview_dark_background" />
+
+                <EditText
+                    android:id="@+id/edtDNI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="8"
+                    android:inputType="textPersonName"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="90dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Codigo Verificador:  "
+                    android:textColor="@color/cardview_dark_background" />
+
+                <EditText
+                    android:id="@+id/edtCodigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="8"
+                    android:inputType="textPersonName"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Nombres:  "
+                    android:textColor="@color/cardview_dark_background" />
+                <TextView
+                    android:id="@+id/txtNombresCompletos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="NOMBRES DE LA PERSONA"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="90dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Apellidos:  "
+                    android:textColor="@color/cardview_dark_background" />
+                <TextView
+                    android:id="@+id/txtApellidosCompletos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="APELLIDOS DE LA PERSONA"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="110dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fecha de Nacimiento:  "
+                    android:textColor="@color/cardview_dark_background" />
+                <TextView
+                    android:id="@+id/txtFechaNacUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="DNI DE PERSONA"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="130dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Telefono:  "
+                    android:textColor="@color/cardview_dark_background" />
+                <TextView
+                    android:id="@+id/txtTelefonoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="TELEFONO DE LA PERSONA"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="150dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Codigo:  "
+                    android:textColor="@color/cardview_dark_background" />
+                <TextView
+                    android:id="@+id/txtCodigoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="CODIGO DE LA PERSONA"
+                    android:textColor="@color/cardview_dark_background" />
+
+            </LinearLayout>
+
+           <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="190dp"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VER CODIGO QR"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>-->
+    </ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>

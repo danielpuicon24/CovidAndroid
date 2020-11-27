@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgUsuario"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+
+            />
+
+        <TextView
+            android:text="Perfil del Usuario Logueado"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/txtUsername"
+            android:text="Username"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+        />
+        <TextView
+            android:id="@+id/txtEmail"
+            android:text="Email"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+        />
+        <TextView
+            android:id="@+id/txtID"
+            android:text="Identificador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <Button
+            android:id="@+id/btnValidarUsuario"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/ic_action_fingerprint"
+            android:padding="20dp"
+            android:text="Validar Usuario"
+            android:textColor="@color/biometric_error_color"
+             />
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:text="Toca sensor"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
