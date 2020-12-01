@@ -35,6 +35,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     TextView txtUsername, txtEmail, txtIdentificador, txtError;
-    Button btnCerrar, btnValidarUsuario;
 
     ImageView imgUsuario;
 
@@ -92,9 +92,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         txtUsername = (TextView)findViewById(R.id.txtUsername);
         txtIdentificador = (TextView)findViewById(R.id.txtID);
         imgUsuario = (ImageView)findViewById(R.id.imgUsuario);
-        //btnCerrar = (Button)findViewById(R.id.btnCerrarSesion);
-        btnValidarUsuario = (Button)findViewById(R.id.btnValidarUsuario);
-        txtError = (TextView)findViewById(R.id.txtError);
+        //txtError = (TextView)findViewById(R.id.txtError);
 
 
         GoogleSignInAccount signInAccount= GoogleSignIn.getLastSignedInAccount(this);
@@ -102,9 +100,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             Toast.makeText(this, "Welcome back " + signInAccount.getDisplayName() , Toast.LENGTH_SHORT).show();
         }
 
-        txtUsername.setText("Nombre de Usuario: " + signInAccount.getDisplayName());
-        txtEmail.setText("Email del Usuario: " + signInAccount.getEmail());
-        txtIdentificador.setText("Identificador" + signInAccount.getId());
+        txtUsername.setText("Usuario: " + signInAccount.getDisplayName());
+        txtEmail.setText("Email: " + signInAccount.getEmail());
+        txtIdentificador.setText("Identificador: " + signInAccount.getId());
         Glide.with(this).load(signInAccount.getPhotoUrl()).into(imgUsuario);
 
 
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             fingerprintManager =
                     (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
 
-            textView = (TextView) findViewById(R.id.txtError);
+            //textView = (TextView) findViewById(R.id.txtError);
 
             //Check whether the device has a fingerprint sensor//
             if (!fingerprintManager.isHardwareDetected()) {
@@ -161,6 +159,32 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
 
+    }
+
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            hideSystemUI();
+        }
+    }
+
+    private void hideSystemUI() {
+        // Enables regular immersive mode.
+        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
+        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        // Set the content to appear under the system bars so that the
+                        // content doesn't resize when the system bars hide and show.
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // Hide the nav bar and status bar
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

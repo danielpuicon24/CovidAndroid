@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -37,6 +38,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -83,6 +86,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
         mapFragment.getMapAsync(this);
 
         this.listar();
+
 
         return rootView;
     }
@@ -135,8 +139,17 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
         markerOptions.title("Posicion Actual");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         mCurrLocationMarker = mGoogleMap.addMarker(markerOptions);
+
+
+        Circle circle = mGoogleMap.addCircle(new CircleOptions()
+                .center(latLng)
+                .radius(80)
+                .fillColor(Color.GRAY));
+
         //move map camera
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,16));
+        //mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(mGoogleMap.getCameraPosition().zoom - 0.5f));
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,16));
+        //mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15.0f));
 
         for (int i = 0; i < listaLugares.size(); i++)
         {
@@ -167,6 +180,32 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
             }
         }
     }
+
+    private void drawCircle(double latitude, double longitude) {
+        // Instantiating CircleOptions to draw a circle around the marker
+        CircleOptions circleOptions = new CircleOptions();
+
+
+        // Specifying the center of the circle
+        circleOptions.center(new LatLng(latitude, longitude));
+
+        // Radius of the circle
+        circleOptions.radius(50);
+
+        // Border color of the circle
+        circleOptions.strokeColor(Color.BLUE);
+
+        // Fill color of the circle
+        circleOptions.fillColor(0x30ff0000);
+
+        // Border width of the circle
+        circleOptions.strokeWidth(2);
+
+        // Adding the circle to the GoogleMap
+        mGoogleMap.addCircle(circleOptions);
+
+    }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -223,6 +262,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
                                 ActivityCompat.requestPermissions(getActivity(),
                                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                                         MY_PERMISSIONS_REQUEST_LOCATION );
+                                listar();
                             }
                         })
                         .create()
@@ -235,6 +275,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
             }
         }
     }
+
 
 
     //LISTADO DE MARKERS
@@ -303,7 +344,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback,
                         obj.setLatitud(datosProducto.getDouble("latitud"));
                         obj.setLongitud(datosProducto.getDouble("longitud"));
 
-                        Log.e("PLACES", obj.getNombre() + obj.getDescripcion() + String.valueOf(obj.getLatitud()) + String.valueOf(obj.getLongitud()));
+                        //Log.e("PLACES", obj.getNombre() + obj.getDescripcion() + String.valueOf(obj.getLatitud()) + String.valueOf(obj.getLongitud()));
 
 
                         listaLugares.add(obj);

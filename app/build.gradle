@@ -20,6 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -57,13 +62,29 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.1'
 
     //LIBRERIA PARA LAS PETICIONES HTTP
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     //LIBRERIA PARA SERIALIZAR LOS JSON
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     implementation 'com.android.volley:volley:1.1.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     // jsoup HTML parser library @ https://jsoup.org/
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    //Animacion de Lottie
+
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    // google support library ---------------------------------------------------------------------
+
+
+    implementation 'com.wdullaer:materialdatetimepicker:3.2.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+
 
 }
 

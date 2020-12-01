@@ -4,75 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/linear_gradient_background"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:stretchColumns="1">
 
-        <ImageView
-            android:id="@+id/imgUsuario"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+        <TableRow >
 
-            />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_span="2"
+                android:fontFamily="@font/lato_black"
+                android:padding="3dip"
+                android:gravity="center"
+                android:text="Perfil del Usuario \n Logueado"
+                android:textSize="30dp" />
 
-        <TextView
-            android:text="Perfil del Usuario Logueado"
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
-        <TextView
-            android:id="@+id/txtUsername"
-            android:text="Username"
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-        />
-        <TextView
-            android:id="@+id/txtEmail"
-            android:text="Email"
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-        />
-        <TextView
-            android:id="@+id/txtID"
-            android:text="Identificador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
-        <Button
-            android:id="@+id/btnValidarUsuario"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:drawableLeft="@drawable/ic_action_fingerprint"
-            android:padding="20dp"
-            android:text="Validar Usuario"
-            android:textColor="@color/biometric_error_color"
-             />
-        <TextView
-            android:id="@+id/txtError"
-            android:layout_width="wrap_content"
-            android:text="Toca sensor"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
-    </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/imgUsuario"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_span="2"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_span="2"
+                android:fontFamily="@font/lato_bold"
+                android:text="Username"
+                android:textSize="18dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/txtEmail"
+                android:text="Email"
+                android:layout_span="2"
+                android:textSize="18dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/lato_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/txtID"
+                android:text="Identificador"
+                android:layout_span="2"
+                android:textSize="18dp"
+                android:fontFamily="@font/lato_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:src="@drawable/ic_action_fingerprint"
+                android:layout_span="2"
+                app:tint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_span="2"
+                android:fontFamily="@font/lato_black_italic"
+                android:text="Por favor posiciona tu dedo en la huella digital" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="para verificar tu identidad"
+                android:layout_span="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato_black_italic"
+                />
+        </TableRow>
+
+
+    </TableLayout>
+
 
 
 </RelativeLayout>

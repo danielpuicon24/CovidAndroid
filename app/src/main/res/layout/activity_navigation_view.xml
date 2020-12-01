@@ -9,10 +9,11 @@
     <FrameLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="55dp" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btmNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,9 +24,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:background="@color/colorNavigationBackground"
-        app:itemIconTint="@color/colorNavigationItem"
+        android:background="@android:color/darker_gray"
+        app:itemIconTint="@color/blue_A700"
+        app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Caption"
+        app:itemTextAppearanceInactive="@style/TextAppearance.AppCompat.Caption"
         app:itemTextColor="@color/colorNavigationText"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/navigation"
         />
 

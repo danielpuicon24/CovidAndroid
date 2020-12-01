@@ -1,146 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".FragmentPerfil">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@color/colorCoronavirus">
-        <LinearLayout
+        android:layout_height="195dp"
+        android:gravity="center"
+        android:background="@drawable/linear_gradient_background">
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp"
+            android:gravity="center"
             >
+            <TableRow>
+                <TextView
+                    android:layout_span="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Perfil del Usuario"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="25dp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/imgUsuarioPerfilEditar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="10dp"
+                    />
+                <TableLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_span="1">
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/txtNombreUsuarioEditar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="Nombre del Usuario Logueado"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="18dp" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="12dp">
+                        <TextView
+                            android:id="@+id/txtEmailUsuarioEditar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="Email del Usuario Logueado"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="18dp" />
+                    </TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Perfil del Usuario Logueado"
-                android:textColor="@color/cardview_dark_background" />
+                </TableLayout>
+            </TableRow>
+        </TableLayout>
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp"
-            >
-
-            <TextView
-                android:id="@+id/txtNombreUsuarioEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Nombre del Usuario Logueado"
-                android:textColor="@color/cardview_dark_background" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="70dp"
-            >
-            <TextView
-                android:id="@+id/txtEmailUsuarioEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Email del Usuario Logueado"
-                android:textColor="@color/cardview_dark_background" />
-
-        </LinearLayout>
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        >
-        <Button
-            android:id="@+id/btnVerPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver Perfil del Usuario"
-            android:drawableLeft="@drawable/btn_verperfil"
-            />
-
-
-
-    </LinearLayout>
-
     <ScrollView
         android:id="@+id/srcDatos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
             android:stretchColumns="1">
-            <TableRow >
-                <TextView
-                    android:text="DATOS DEL PERFIL DEL USUARIO"
-                    android:padding="3dip"
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btnVerPerfil"
+                    android:layout_width="260dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_span="2"
+                    android:background="@drawable/btn_rounded_green"
+                    android:drawableLeft="@drawable/size_icon_search"
+                    android:drawableTint="@color/blue_A700"
+                    android:fontFamily="@font/lato_black"
+                    android:padding="15dp"
+                    android:text="  VER PERFIL DEL USUARIO"
+                    android:textColor="@color/blue_grey_900" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_span="2"
+                    android:fontFamily="@font/lato_black"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="EDITAR DATOS DEL \n PERFIL DEL USUARIO"
+                    android:textSize="22dp" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_marginTop="@dimen/spacing_small"
                     android:layout_gravity="center"
-                    />
+                    android:layout_span="2"
+                    android:textColorHint="@color/colorPrimary"
+                    >
 
+                    <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/txtDNIBuscar"
+                        android:layout_width="200dp"
+                        android:layout_gravity="center"
+                        android:layout_span="2"
+                        android:layout_height="match_parent"
+                        android:hint="Ingresa tu DNI"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:padding="0dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:layout_gravity="center"
+                    android:layout_span="2"
+                    android:textColorHint="@color/colorPrimary"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCodigoBuscar"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:hint="Ingresa tu Codigo"
+                        android:maxLength="1"
+                        android:padding="0dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
             <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
-                <TextView
-                    android:text="DNI"
-                    android:padding="4dip"
-                    android:layout_gravity="center_horizontal"/>
-                <EditText
-                    android:id="@+id/edtDNI"
-                    android:text=""
-                    android:layout_width="20dp"
-                    android:padding="3dip" />
-            </TableRow>
 
-            <TableRow
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:text="Codigo"
-                    android:padding="4dip"
-                    android:layout_gravity="center_horizontal"/>
-                <EditText
-                    android:id="@+id/edtCodigo"
-                    android:text=""
-                    android:layout_width="20dp"
-                    android:padding="3dip" />
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="10dp">
                 <Button
                     android:id="@+id/btnBuscarDNI"
-                    android:text="Buscar DNI"
-                    android:padding="4dip"
-                    android:layout_span="2"
-                    android:layout_gravity="center_horizontal"/>
-            </TableRow>
-            <TableRow
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:text="Ingresa tus credenciales para buscar tu DNI"
-                    android:padding="4dip"
-                    android:layout_span="2"
+                    android:layout_width="350dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:layout_span="2"
+                    android:background="@drawable/btn_rounded_green"
+                    android:drawableLeft="@drawable/size_icon_dni"
+                    android:drawableTint="@color/blue_A700"
+                    android:fontFamily="@font/lato_black"
+                    android:padding="20dp"
+                    android:text="  BUSCAR DNI"
+                    android:textColor="@color/blue_grey_900" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/txtResultadoDNI"
+                    android:gravity="center"
+                    android:textColor="@color/red_300"
+                    android:layout_span="2"
+                    android:fontFamily="@font/lato_bold"
+                    android:padding="4dip"
+                    android:text=""
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
@@ -149,333 +204,194 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp">
 
-                <TextView
-                    android:layout_width="160dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="210dp"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_marginTop="@dimen/spacing_small"
                     android:layout_gravity="center"
-                    android:padding="4dip"
-                    android:text="DNI Solicitado: " />
+                    android:layout_span="2"
+                    android:textColorHint="@color/colorPrimary">
 
-                <TextView
-                    android:id="@+id/txtDNISolicitado"
-                    android:text="dni"
-                    android:padding="4dip"
-                    />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDNISolicitado"
+                        android:layout_width="210dp"
+                        android:layout_height="35dp"
+                        android:hint="DNI Solicitado"
+                        android:focusable="false"
+                        android:inputType="number"
+                        android:padding="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp">
 
-                <TextView
-                    android:layout_width="160dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_marginTop="@dimen/spacing_small"
                     android:layout_gravity="center"
-                    android:padding="4dip"
-                    android:text="Nombres Completos: " />
+                    android:layout_span="2"
+                    android:textColorHint="@color/colorPrimary">
 
-                <TextView
-                    android:id="@+id/txtNombresCompletos"
-                    android:padding="4dip"
-                    android:text="nombres" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNombresCompletosSolicitados"
+                        android:layout_width="250dp"
+                        android:layout_height="35dp"
+                        android:hint="Nombres Completos"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:padding="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp">
 
-                <TextView
-                    android:layout_width="160dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/spacing_xxlarge"
                     android:layout_gravity="center"
-                    android:padding="4dip"
-                    android:text="Apellidos Completos: " />
+                    android:layout_span="2"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColorHint="@color/colorPrimary">
 
-                <TextView
-                    android:id="@+id/txtApellidosCompletos"
-                    android:padding="4dip"
-                    android:text="apellidos" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtApellidosCompletosSolicitado"
+                        android:layout_width="250dp"
+                        android:layout_height="35dp"
+                        android:hint="Apellidos Completos"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:padding="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp">
 
-                <TextView
-                    android:layout_width="160dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/spacing_xxlarge"
                     android:layout_gravity="center"
-                    android:padding="4dip"
-                    android:text="Fecha de Nacimiento: " />
+                    android:layout_span="2"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColorHint="@color/colorPrimary">
 
-                <EditText
-                    android:id="@+id/edtFechaNacimiento"
-                    android:hint="Fecha de Nacimiento"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtTelefonoEditar"
+                        android:layout_width="250dp"
+                        android:layout_height="35dp"
+                        android:hint="Telefono de Contacto"
+                        android:maxLength="9"
+                        android:inputType="number"
+                        android:padding="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:focusable="false"
-                    android:clickable="true"
-                    android:maxLines="1" />
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="30" >
+
+                    <ImageView
+                        android:id="@+id/imgFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="hola"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_calendar" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="235dp"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_gravity="center"
+                        android:layout_span="2"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtFechaNacimiento"
+                            android:layout_width="235dp"
+                            android:layout_height="35dp"
+                            android:hint="Seleccione fecha de Nac."
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:padding="0dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
             </TableRow>
 
             <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-                <TextView
-                    android:text="Telefono:"
-                    android:padding="4dip"
-                    android:layout_gravity="center_horizontal"/>
-                <EditText
-                    android:id="@+id/edtTelefono"
-                    android:text=""
-                    android:layout_width="10dp"
-                    android:padding="3dip" />
-            </TableRow>
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp">
-                <TextView
-                    android:text="Codigo:"
-                    android:padding="4dip"
-                    android:layout_gravity="center_horizontal"/>
-                <EditText
-                    android:id="@+id/edtCodigoIdentificador"
-                    android:text=""
-                    android:layout_width="10dp"
-                    android:padding="3dip" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_gravity="center"
+                    android:layout_span="2"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColorHint="@color/colorPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCodigoEditar"
+                        android:layout_width="250dp"
+                        android:layout_height="35dp"
+                        android:hint="Codigo Identificador"
+                        android:inputType="number"
+                        android:padding="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
-            <TableRow
-                android:layout_marginTop="10dp">
+            <TableRow android:layout_marginTop="10dp">
+
                 <Button
                     android:id="@+id/btnGuardarDatosEditados"
-                    android:text="Guardar Datos"
-                    android:padding="4dip"
+                    android:layout_width="260dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_span="2"
-                    android:layout_gravity="center_horizontal"/>
+                    android:background="@drawable/btn_rounded_green"
+                    android:drawableLeft="@drawable/btn_save"
+                    android:drawableTint="@color/blue_A700"
+                    android:fontFamily="@font/lato_black"
+                    android:padding="15dp"
+                    android:text="  GUARDAR DATOS"
+                    android:textColor="@color/blue_grey_900" />
             </TableRow>
 
         </TableLayout>
 
-       <!-- <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="EDITAR DATOS DEL PERFIL DEL USUARIO"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="50dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="DNI:  "
-                    android:textColor="@color/cardview_dark_background" />
-
-                <EditText
-                    android:id="@+id/edtDNI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="8"
-                    android:inputType="textPersonName"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="90dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Codigo Verificador:  "
-                    android:textColor="@color/cardview_dark_background" />
-
-                <EditText
-                    android:id="@+id/edtCodigo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="8"
-                    android:inputType="textPersonName"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="70dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Nombres:  "
-                    android:textColor="@color/cardview_dark_background" />
-                <TextView
-                    android:id="@+id/txtNombresCompletos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="NOMBRES DE LA PERSONA"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="90dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Apellidos:  "
-                    android:textColor="@color/cardview_dark_background" />
-                <TextView
-                    android:id="@+id/txtApellidosCompletos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="APELLIDOS DE LA PERSONA"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="110dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Fecha de Nacimiento:  "
-                    android:textColor="@color/cardview_dark_background" />
-                <TextView
-                    android:id="@+id/txtFechaNacUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="DNI DE PERSONA"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="130dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Telefono:  "
-                    android:textColor="@color/cardview_dark_background" />
-                <TextView
-                    android:id="@+id/txtTelefonoUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="TELEFONO DE LA PERSONA"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="150dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Codigo:  "
-                    android:textColor="@color/cardview_dark_background" />
-                <TextView
-                    android:id="@+id/txtCodigoUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="CODIGO DE LA PERSONA"
-                    android:textColor="@color/cardview_dark_background" />
-
-            </LinearLayout>
-
-           <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="190dp"
-                android:gravity="center"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="VER CODIGO QR"
-                    />
-
-            </LinearLayout>
-
-        </RelativeLayout>-->
     </ScrollView>
-
-
-
-
-
 
 
 </LinearLayout>
